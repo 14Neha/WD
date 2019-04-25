@@ -27,9 +27,28 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/owl.transitions.css"
+
+
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/owl.carousel.js",
+              "src/assets/js/jquery.magnific-popup.min.js",
+              "src/assets/js/jquery.ajaxchimp.min.js",
+              "src/assets/js/map.js",
+              "src/assets/js/custom.js"
+    
+
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
