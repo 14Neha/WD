@@ -17,6 +17,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import {LoginService} from './services/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './auth/token.interceptor';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,13 @@ import { RegisterComponent } from './components/register/register.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [LoginService,HttpClientModule],
+  providers: [LoginService,
+    HttpClientModule,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

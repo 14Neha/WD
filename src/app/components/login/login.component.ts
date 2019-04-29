@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {LoginService} from '../../services/login.service';
+import { Observable, of, pipe, throwError } from 'rxjs';
+import { map, switchMap, debounceTime, catchError } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,7 +28,9 @@ export class LoginComponent implements OnInit {
       console.log("user", res);
       this.router.navigate(['home']);
 
-  });
+  }), (err) => {
+    console.log(err);
+    };
   
     
     }
