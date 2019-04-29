@@ -14,6 +14,9 @@ import { CatchUpComponent } from './components/catch-up/catch-up.component';
 import { LiveComponent } from './components/live/live.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import {LoginService} from './services/login.service';
+import {HttpClientModule} from '@angular/common/http';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,15 @@ import { ContactComponent } from './components/contact/contact.component';
     CatchUpComponent,
     LiveComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
