@@ -18,10 +18,9 @@ export class TokenInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: {
         
-        Authorization: 'Basic VFY6TFVJU1RWQDEyMw==',
-        'Access-Control-Allow-Origin': 'http://localhost:4200' 
         
-        
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic VFY6TFVJU1RWQDEyMw=='
       }
       
     });
